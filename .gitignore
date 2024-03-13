@@ -9,6 +9,7 @@ dist/
 bower_components/
 zip/
 build/
+.publish/
 
 # Compiled Java class files
 *.class

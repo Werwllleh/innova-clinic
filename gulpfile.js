@@ -108,7 +108,7 @@ function svgoConfig(minify = argv.minifySvg) {
 }
 
 gulp.task('deploy', function() {
-	return gulp.src('./dist/**/*')
+	return gulp.src('build/**/*')
 		.pipe(ghPages());
 });
 
