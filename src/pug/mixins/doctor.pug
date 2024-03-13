@@ -1,0 +1,15 @@
+mixin doctor(photo, name, experience, awards, specialization)
+	// Doctor
+	.doctor&attributes(attributes)
+		.doctor__inner(data-modal='doctor')
+			img.doctor__photo(src="images/doctors-photo/"+photo, alt=name)
+			.doctor__advantages
+				.doctor__experience= experience
+				if awards && awards.length
+					ul.doctor__awards
+						for award in awards
+							li.doctor__awards-elem= award
+			.doctor__info-box
+				p.doctor__name !{name}
+				p.doctor__specialization !{specialization}
+		a.doctor__link(href="./doctor.html")

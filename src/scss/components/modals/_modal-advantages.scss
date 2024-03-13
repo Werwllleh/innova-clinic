@@ -1,0 +1,18 @@
+.modal-advantages {
+	max-width: 666px;
+	padding: 50px 50px 58px;
+
+	@include mobile {
+		max-width: 100%;
+		padding: 16px 16px 32px;
+	}
+
+	&__title {
+		margin-bottom: 32px;
+	}
+
+	&__grid {
+		display: grid;
+		gap: 24px;
+	}
+}

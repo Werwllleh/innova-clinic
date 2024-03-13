@@ -1,0 +1,24 @@
+mixin get-consult()
+	// Get consult
+	section.get-consult&attributes(attributes)
+		.get-consult__box
+			.get-consult__grid
+				.get-consult__content-box
+					h3.h2-t.get-consult__title Запишитесь на первичную консультацию
+					p.get-consult__text Составим план лечения и подберем врача
+					form.get-consult__form
+						.form-group.form-group--light
+							input.form-group__field(type="text", placeholder="Ваше имя*", name="name", required)
+							label.form-group__label Ваше имя*
+							.form-group__check
+						.form-group.form-group--light
+							input.form-group__field(type="tel" placeholder="Ваш телефон*", name="phone", required)
+							label.form-group__label Ваш телефон*
+							.form-group__check
+						button.btn.btn-bg.m-btn.get-consult__button(type="submit") Записаться
+					p.get-consult__agreement Нажимая кнопку «Записаться», вы даете свое согласие на обработку
+						|
+						|
+						a.get-consult__agreement-link(href="#", target="_blank") персональных данных
+				.get-consult__img-box
+					img.get-consult__img(src="images/get-consult/img.png", alt)

@@ -1,0 +1,163 @@
+extends pug/base
+
+append vars
+	- title = "Врачи"
+	- breadcrumbs = {pagesBefore:['Главная'], pagesCurrent:'Врачи'}
+
+block content
+	// Section Staff
+	section.section-staff.container
+		h1.h1-t.section-staff__title Врачи
+			|
+			|
+			span.section-staff__title-hide-mobile в Иннова Клиник
+		.section-staff__filters
+			select.select.section-staff__filters-select
+				option(value='Все филиалы', selected) Все филиалы
+				option(value="Филиал 1") Филиал 1
+				option(value="Филиал 2") Филиал 2
+				option(value="Филиал 3") Филиал 3
+			select.select.section-staff__filters-select
+				option(value='Все специальности', selected) Все специальности
+				option(value="Специальность 1") Специальность 1
+				option(value="Специальность 2") Специальность 2
+				option(value="Специальность 3") Специальность 3
+			button.filter-button.section-staff__filters-button(data-modal="staff-filter")
+				img.filter-button__icon(src="images/icons/filter.svg", alt)
+				|Фильтры
+		// Grid
+		.section-staff__grid
+			-
+				var staff = [
+					{
+						photo: '1.jpg',
+						name: 'Винокур Анастасия <br>Александровна',
+						experience: '19 лет стажа',
+						awards: [
+							'2 награды',
+							'15 сертификатов',
+						],
+						specialization: 'Стоматолог, стоматолог-ортопед',
+					},
+					{
+						photo: '2.jpg',
+						name: 'Федотов Руслан <br>Валерьевич',
+						experience: '11 лет стажа',
+						awards: [
+							'3 награды',
+						],
+						specialization: 'Стоматолог-хирург, стоматолог-имплантолог',
+					},
+					{
+						photo: '3.jpg',
+						name: 'Андреев Димитрий <br>Петрович',
+						experience: '9 лет стажа',
+						awards: [
+							'1 награда',
+						],
+						specialization: 'Стоматолог-ортопед',
+					},
+					{
+						photo: '5.jpg',
+						name: 'Никитин Никита <br>Юрьевич',
+						experience: '19 лет стажа',
+						awards: [
+							'2 награды',
+							'15 сертификатов',
+						],
+						specialization: 'Стоматолог, стоматолог-ортопед',
+					},
+					{
+						photo: '6.jpg',
+						name: 'Гордеева Людмила <br>Валерьевна',
+						experience: '11 лет стажа',
+						awards: [
+							'3 награды',
+						],
+						specialization: 'Стоматолог - терапевт',
+					},
+					{
+						photo: '4.jpg',
+						name: 'Романова Анастасия <br>Александровна',
+						experience: '9 лет стажа',
+						awards: [
+							'1 награда',
+						],
+						specialization: 'Врач-Стоматолог-Хирург',
+					},
+				]
+			for doctor in staff
+				+doctor(doctor.photo, doctor.name, doctor.experience, doctor.awards, doctor.specialization)
+
+		+get-consult()(class="get-consult--page-doctors")
+
+		// Grid
+		.section-staff__grid
+			-
+				var staff = [
+					{
+						photo: '7.jpg',
+						name: 'Пласкин Алексей <br>Александрович',
+						experience: '9 лет стажа',
+						awards: [
+							'1 награда',
+						],
+						specialization: 'Стоматолог-хирург',
+					},
+					{
+						photo: '8.jpg',
+						name: 'Белякова Татьяна <br>Юрьевна',
+						experience: '9 лет стажа',
+						awards: [
+							'1 награда',
+						],
+						specialization: 'Гигиенист стоматологический',
+					},
+					{
+						photo: '9.jpg',
+						name: 'Александрова Екатерина <br>Владиславна',
+						experience: '9 лет стажа',
+						awards: [
+							'1 награда',
+						],
+						specialization: 'Стоматолог-хирург, стоматолог-имплантолог',
+					},
+					{
+						photo: '10.jpg',
+						name: 'Николаева Инга <br>Васильевна',
+						experience: '9 лет стажа',
+						awards: [
+							'1 награда',
+						],
+						specialization: 'Стоматолог общей практики',
+					},
+					{
+						photo: '11.jpg',
+						name: 'Сергеева Анастасия <br>Сергеевна',
+						experience: '9 лет стажа',
+						awards: [
+							'1 награда',
+						],
+						specialization: 'Стоматолог-ортопед',
+					},
+					{
+						photo: '12.jpg',
+						name: 'Гордеева Людмила <br>Валерьевна',
+						experience: '11 лет стажа',
+						awards: [
+							'3 награды',
+						],
+						specialization: 'Стоматолог-терапевт',
+					},
+				]
+			for doctor in staff
+				+doctor(doctor.photo, doctor.name, doctor.experience, doctor.awards, doctor.specialization)
+		.section-staff__null
+			.section-staff__null-body
+				.section-staff__null-icone
+					img.section-staff__null-icone-search(src="./images/icons/search.svg")
+					span
+						img(src="./images/icons/close-red.svg")
+				.section-staff__null-text
+					h4 Ничего не нашлось
+					p.b-txt Попробуйте изменить фильтр

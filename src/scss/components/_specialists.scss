@@ -1,0 +1,101 @@
+.specialists {
+	padding: 40px 40px 50px;
+	border-radius: 20px;
+	background-color: $color-grey-back;
+
+	@include desktop {
+		padding: 24px 16px;
+	}
+
+	&__task-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-bottom: 20px;
+	}
+
+	&__task {
+		padding: 8px 20px;
+		border-radius: 40px;
+		background-color: $color-white;
+		border: 1px solid #EAEDF1;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	&__detail-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+		margin-bottom: 40px;
+		font-size: 17px;
+		line-height: 1.4;
+
+		@include desktop {
+			gap: 24px;
+			margin-bottom: 22px;
+		}
+	}
+
+	&__detail {
+		position: relative;
+		padding-left: 14px;
+
+		&::before {
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 6px;
+			height: 6px;
+			background-color: $color-global-yellow;
+			border-radius: 50%;
+			content: "";
+		}
+	}
+
+	&__person-row {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include desktop {
+			flex-direction: column;
+		}
+	}
+
+	&__person {
+		min-width: 50%;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		padding-right: 30px;
+
+		@include desktop {
+			padding-right: 0;
+
+			&:not(:last-child) {
+				margin-bottom: 13px;
+			}
+		}
+	}
+
+	&__person-photo {
+		flex-shrink: 0;
+		display: block;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+	}
+
+	&__person-name {
+		font-size: 18px;
+		font-weight: 600;
+		color: $color-black;
+
+		@include desktop {
+			font-size: 16px;
+			br {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+// Modal Staff filter
+#modal-staff-filter.modal
+	.modal__window.modal-filter
+		button.modal__close-btn.js-modal-close
+		h2.modal__title.modal-filter__title.h2-t Фильтры
+		form.modal-filter__form(action="#")
+			select.select
+				option(value='Все филиалы', selected) Все филиалы
+				option(value="Филиал 1") Филиал 1
+				option(value="Филиал 2") Филиал 2
+				option(value="Филиал 3") Филиал 3
+			select.select
+				option(value='Все специальности', selected) Все специальности
+				option(value="Специальность 1") Специальность 1
+				option(value="Специальность 2") Специальность 2
+				option(value="Специальность 3") Специальность 3
+			.modal-filter__button-box
+				button.modal-filter__submit.btn.btn-bg.l-btn.js-modal-close(type="submit") Применить фильтры
+				button.modal-filter__reset.button.button--light-blue(type="reset") Сбросить

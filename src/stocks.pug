@@ -1,0 +1,47 @@
+extends pug/base
+
+append vars
+	- title = "Акции"
+	- breadcrumbs = {pagesBefore:['Главная'], pagesCurrent:'Акции'}
+
+block content
+	// Section Stocks
+	section.section-stocks.container
+		h1.h1-t.section-stocks__title Акции
+		.section-stocks__grid
+			-
+				var stockList = [
+					{
+						bg: 'bg1.jpg',
+						text: 'Именинникам скидка 15% в течение 14 дней после дня рождения',
+					},
+					{
+						bg: 'bg2.jpg',
+						text: 'Программа лояльности Иннова Клиник',
+					},
+					{
+						bg: 'bg3.jpg',
+						text: 'Cкидка 5000 ₽ на имплантацию и 20% на КТ зубов',
+					},
+					{
+						bg: 'bg4.jpg',
+						text: 'Скидка 10% при имплантации <br>3-х имплантов',
+						period: 'С 1 июля 11  сентября',
+						isTextBlack: true
+					},
+					{
+						bg: 'bg5.jpg',
+						text: 'Пенсионерам скидка 5% при предъявлении пенсионного удостоверения',
+					},
+					{
+						bg: 'bg6.jpg',
+						text: 'Скидка 20%  на гигиену для пациентов, делающих гигиену каждые полгода и чаще',
+						period: 'С 1 июля 11  сентября',
+					},
+					{
+						bg: 'bg7.jpg',
+						text: 'Подписчикам нашей страницы ВКонтакте скидка 3%',
+					},
+				]
+			for stock in stockList
+				+stock-card(stock.bg, stock.text, stock.period, stock.isTextBlack)

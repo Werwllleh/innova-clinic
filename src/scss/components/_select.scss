@@ -1,0 +1,365 @@
+:root {
+	--ss-primary-color: #5897fb;
+	--ss-bg-color: #ffffff;
+	--ss-font-color: #4d4d4d;
+	--ss-font-placeholder-color: #8d8d8d;
+	--ss-disabled-color: #dcdee2;
+	--ss-border-color: #dcdee2;
+	--ss-highlight-color: #fffb8c;
+	--ss-success-color: #00b755;
+	--ss-error-color: #dc3545;
+	--ss-main-height: 50px;
+	--ss-content-height: 300px;
+	--ss-spacing-l: 7px;
+	--ss-spacing-m: 5px;
+	--ss-spacing-s: 17px;
+	--ss-animation-timing: 0.2s;
+	--ss-border-radius: 4px
+}
+
+@keyframes ss-valueIn {
+	0% {
+		transform: scale(0);
+		opacity: 0
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1
+	}
+}
+
+@keyframes ss-valueOut {
+	0% {
+		transform: scale(1);
+		opacity: 1
+	}
+	100% {
+		transform: scale(0);
+		opacity: 0
+	}
+}
+
+.ss-hide {
+	display: none !important
+}
+
+.ss-main {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	user-select: none;
+	color: var(--ss-font-color);
+	min-height: var(--ss-main-height);
+	width: 100%;
+	padding: 13px 20px;
+	cursor: pointer;
+	border: 1px solid #CFD3DA;
+	border-radius: 8px;
+	background-color: #fff;
+	font-size: 16px;
+	outline: 0;
+	box-sizing: border-box;
+	transition: background-color var(--ss-animation-timing);
+	overflow: hidden
+}
+
+.ss-main:focus {
+}
+
+.ss-main.ss-disabled {
+	background-color: var(--ss-disabled-color);
+	cursor: not-allowed
+}
+
+.ss-main.ss-disabled .ss-values .ss-disabled {
+	color: var(--ss-font-color)
+}
+
+.ss-main.ss-disabled .ss-values .ss-value .ss-value-delete {
+	cursor: not-allowed
+}
+
+.ss-main .ss-values {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: var(--ss-spacing-m);
+	flex: 1 1 100%
+}
+
+.ss-main .ss-values .ss-placeholder {
+	display: flex;
+	padding: var(--ss-spacing-s) var(--ss-spacing-m) var(--ss-spacing-s) var(--ss-spacing-m);
+	margin: auto 0px auto 0px;
+	line-height: 1em;
+	align-items: center;
+	width: 100%;
+	color: var(--ss-font-placeholder-color);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.ss-main .ss-values .ss-max {
+	display: flex;
+	user-select: none;
+	align-items: center;
+	width: fit-content;
+	font-size: 12px;
+	color: #fff;
+	line-height: 1;
+	padding: var(--ss-spacing-s) var(--ss-spacing-m);
+	background-color: var(--ss-primary-color);
+	border-radius: var(--ss-border-radius)
+}
+
+.ss-main .ss-values .ss-single {
+	display: flex;
+}
+
+.ss-main .ss-values .ss-value {
+	display: flex;
+	user-select: none;
+	align-items: center;
+	width: fit-content;
+	background-color: var(--ss-primary-color);
+	border-radius: var(--ss-border-radius);
+	animation-name: ss-valueIn;
+	animation-duration: var(--ss-animation-timing);
+	animation-timing-function: ease-out;
+	animation-fill-mode: both
+}
+
+.ss-main .ss-values .ss-value.ss-value-out {
+	animation-name: ss-valueOut;
+	animation-duration: var(--ss-animation-timing);
+	animation-timing-function: ease-out
+}
+
+.ss-main .ss-values .ss-value .ss-value-text {
+	font-size: 12px;
+	color: #fff;
+	line-height: 1;
+	padding: var(--ss-spacing-s) var(--ss-spacing-m)
+}
+
+.ss-main .ss-values .ss-value .ss-value-delete {
+	display: flex;
+	align-items: center;
+	height: var(--ss-spacing-l);
+	width: var(--ss-spacing-l);
+	padding: var(--ss-spacing-s) var(--ss-spacing-m);
+	cursor: pointer;
+	border-left: solid 1px #fff;
+	box-sizing: content-box
+}
+
+.ss-main .ss-values .ss-value .ss-value-delete svg {
+	height: var(--ss-spacing-l);
+	width: var(--ss-spacing-l)
+}
+
+.ss-main .ss-values .ss-value .ss-value-delete svg path {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 18;
+	stroke-linecap: round;
+	stroke-linejoin: round
+}
+
+.ss-main .ss-deselect {
+	display: flex;
+	align-self: center;
+	justify-content: flex-end;
+	flex: 0 1 auto;
+	width: 8px;
+	height: 8px;
+	margin: 0 var(--ss-spacing-m) 0 var(--ss-spacing-m)
+}
+
+.ss-main .ss-deselect svg {
+	width: 8px;
+	height: 8px
+}
+
+.ss-main .ss-deselect svg path {
+	fill: none;
+	stroke: var(--ss-font-color);
+	stroke-width: 20;
+	stroke-linecap: round;
+	stroke-linejoin: round
+}
+
+.ss-main .ss-arrow {
+	position: absolute;
+	right: 10px;
+	top: 18px;
+	width: 10px;
+	height: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex: 0 1 auto;
+	margin: auto var(--ss-spacing-m) auto var(--ss-spacing-m)
+}
+
+.ss-main .ss-arrow path {
+	fill: none;
+	stroke: var(--ss-font-color);
+	stroke-width: 18;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	transition-timing-function: ease-out;
+	transition: var(--ss-animation-timing)
+}
+
+.ss-content {
+	position: absolute;
+	display: flex;
+	height: auto;
+	flex-direction: column;
+	width: auto;
+	max-height: var(--ss-content-height);
+	padding-top: 8px;
+	box-sizing: border-box;
+	transition: transform var(--ss-animation-timing), opacity var(--ss-animation-timing);
+	opacity: 0;
+	transform: scaleY(0);
+	transform-origin: center top;
+	overflow: hidden;
+	z-index: 10000
+}
+
+.ss-content.ss-relative {
+	position: relative;
+	height: 100%
+}
+
+.ss-content.ss-open-above {
+	flex-direction: column-reverse;
+	opacity: 1;
+	transform: scaleY(1);
+	transform-origin: center bottom;
+	border-top-left-radius: var(--ss-border-radius);
+	border-top-right-radius: var(--ss-border-radius)
+}
+
+.ss-content.ss-open-below {
+	opacity: 1;
+	transform: scaleY(1);
+	transform-origin: center top;
+}
+
+.ss-content .ss-search {
+	flex: 0 1 auto;
+	display: flex;
+	flex-direction: row;
+	padding: var(--ss-spacing-l) var(--ss-spacing-l) var(--ss-spacing-m) var(--ss-spacing-l)
+}
+
+.ss-content .ss-search input {
+	display: inline-flex;
+	font-size: inherit;
+	line-height: inherit;
+	flex: 1 1 auto;
+	width: 100%;
+	min-width: 0px;
+	padding: var(--ss-spacing-m) var(--ss-spacing-l);
+	margin: 0;
+	border: 1px solid var(--ss-border-color);
+	border-radius: var(--ss-border-radius);
+	background-color: #fff;
+	outline: 0;
+	text-align: left;
+	box-sizing: border-box
+}
+
+.ss-content .ss-search input::placeholder {
+	color: var(--ss-font-placeholder-color);
+	vertical-align: middle
+}
+
+.ss-content .ss-search input:focus {
+	box-shadow: 0 0 5px var(--ss-primary-color)
+}
+
+.ss-content .ss-search .ss-addable {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	flex: 0 0 auto;
+	height: auto;
+	margin: 0 0 0 var(--ss-spacing-m);
+	border: 1px solid var(--ss-border-color);
+	border-radius: var(--ss-border-radius)
+}
+
+.ss-content .ss-search .ss-addable svg {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex: 0 1 auto;
+	width: 12px;
+	height: 12px;
+	margin: auto var(--ss-spacing-m) auto var(--ss-spacing-m)
+}
+
+.ss-content .ss-search .ss-addable svg path {
+	fill: none;
+	stroke: var(--ss-font-color);
+	stroke-width: 18;
+	stroke-linecap: round;
+	stroke-linejoin: round
+}
+
+.ss-content .ss-list {
+	flex: 1 1 auto;
+	height: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: 1px solid #EAEDF1;
+	border-radius: 8px;
+	background-color: #fff;
+	box-shadow: 0 10px 30px rgba(#000, .08);
+}
+
+.ss-content .ss-list .ss-error {
+	color: var(--ss-error-color);
+	padding: var(--ss-spacing-l)
+}
+
+.ss-content .ss-list .ss-searching {
+	color: var(--ss-font-color);
+	padding: var(--ss-spacing-l)
+}
+
+.ss-content .ss-list .ss-option {
+	display: flex;
+	padding: 12px 20px;
+	color: #7A7E84;
+	cursor: pointer;
+	user-select: none;
+	font-size: 16px;
+}
+
+.ss-content .ss-list .ss-option:hover {
+	color: #3A3C40;
+	background-color: #F5F5F5;
+}
+
+.ss-content .ss-list .ss-option.ss-highlighted, .ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
+	color: #3A3C40;
+}
+
+.ss-content .ss-list .ss-option.ss-disabled {
+	cursor: not-allowed;
+	background-color: var(--ss-disabled-color)
+}
+
+.ss-content .ss-list .ss-option.ss-disabled:hover {
+	color: var(--ss-font-color)
+}
+
+.ss-content .ss-list .ss-option .ss-search-highlight {
+	background-color: var(--ss-highlight-color)
+}

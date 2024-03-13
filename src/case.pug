@@ -1,0 +1,128 @@
+extends pug/base
+
+append vars
+	- title = "Кейс"
+	- breadcrumbs = {pagesBefore:['Главная', 'Примеры работ'], pagesCurrent:'Восстановление зубов керамическими винирами за 6 визитов'}
+
+block content
+	// Section Case
+	.section.section-case.container
+		.section-case__layout
+			.section-case__back-link-box
+				+back-link("Все работы", "./portfolio.html")
+			.section-case__content-box
+				.section-case__content
+					h1.h2-t.section-case__title 28 керамических реставраций и минимальное препарирование
+					img-comparison-slider.comparison-slider.section-case__comparison-slider
+						img.portfolio-card__img(slot="first", src="images/portfolio/portfolio7-before.jpg", alt="До")
+						img.portfolio-card__img(slot="second", src="images/portfolio/portfolio7-after.jpg", alt="После")
+						.comparison-slider__handle(slot="handle")
+					p Перед врачом стояла задача: сделать новую, естественную улыбку, повторить природную эстетику зубов. Мы создали дизайн улыбки, примерили будущие реставрации в полости рта и внесли корректировки. Пациентка осталась довольна, мы изготовили 28 керамических виниров и коронок, зафиксировали их. На все понадобилось 6 визитов.
+					h3 Возможности виниров
+					p Тут все просто, нам понадобилось 6 приемов в течении 12 дней
+					ul.list-yellow-marker
+						li.list-yellow-marker__elem Консультация с составлением плана лечения
+						li.list-yellow-marker__elem Препарирование верхней группы зубов с изготовлением временных виниров
+						li.list-yellow-marker__elem Препарирование нижней группы зубов с изготовлением временных виниров
+						li.list-yellow-marker__elem Фиксация виниров на зубы верхней челюсти
+						li.list-yellow-marker__elem Фиксация виниров на зубы нижней челюсти
+						li.list-yellow-marker__elem Контрольный осмотр
+					p Состояние десны на следующий день после фиксации нижних керамических реставраций. Цвет Bl3
+					p Срок службы таких реставраций от 15 лет при соблюдении рекомендаций врача (ничего сложного, просто регулярная и качественная гигиена). Цельнокерамические реставрации не темнеют и не впитывают пищевые красители. Улыбка будет такая же яркая спустя 5-10 и более лет после фиксации.
+					img-comparison-slider.comparison-slider.section-case__comparison-slider
+						img.portfolio-card__img(slot="first", src="images/portfolio/portfolio8-before.jpg", alt="До")
+						img.portfolio-card__img(slot="second", src="images/portfolio/portfolio8-after.jpg", alt="После")
+						.comparison-slider__handle(slot="handle")
+				.specialists.section-case__specialists
+					ul.specialists__task-list
+						li.specialists__task Виниры
+						li.specialists__task Имплантация
+					ul.specialists__detail-list
+						li.specialists__detail Длительность лечения 2 недели
+						li.specialists__detail Стоимость 85 000 ₽
+					.specialists__person-row
+						.specialists__person
+							img.specialists__person-photo(src="images/case/photo1.jpg", alt)
+							p.specialists__person-name Никитин Никита
+								br
+								|
+								|Юрьевич
+						.specialists__person
+							img.specialists__person-photo(src="images/case/photo2.jpg", alt)
+							p.specialists__person-name Андреев Димитрий
+								br
+								|
+								|Петрович
+	// Stock slider
+	include pug/includes/stock-slider
+
+	.container
+		+get-consult()(class="get-consult--page-case")
+
+	// Section Portfolio doctor
+	section.section-portfolio-slider
+		.container
+			.section-portfolio-slider__header
+				h2.section-portfolio-slider__title.h2-t Другие работы
+			.tabs
+				.tabs__tab-box
+					.tabs__tab-box-wrap
+						button.tabs__button.tabs__button--active(data-content="content1") Все работы
+						button.tabs__button(data-content="content2") Имплантация
+						button.tabs__button(data-content="content3") Виниры
+						button.tabs__button(data-content="content4") От того же врача
+				.tabs__content-box
+					- var n = 1
+					while n < 5
+						.tabs__content(id="content"+n, class=(n===1?"tabs__content--active":""))
+							.section-portfolio-slider__slider.swiper
+								.swiper-wrapper
+									-
+										var portfolio = [
+											{
+												image: 'portfolio1',
+												category: 'Виниры',
+												title: 'Тотальное преображение улыбки: 28 виниров и коронок',
+												time: '2 недели',
+											},
+											{
+												image: 'portfolio2',
+												category: 'Имплантация',
+												title: 'Сложное протезирование <br>на имплантах',
+												time: '6 месяцев',
+											},
+											{
+												image: 'portfolio3',
+												category: 'Реставрация',
+												title: 'Реставрация по закрытию трем и диастем',
+												time: '2 визита',
+											},
+											{
+												image: 'portfolio4',
+												category: 'Реставрация',
+												title: 'Реставрация по закрытию трем и диастем',
+												time: '2 визита',
+											},
+											{
+												image: 'portfolio5',
+												category: 'Имплантация',
+												title: 'Сложное протезирование <br>на имплантах',
+												time: '6 месяцев',
+											},
+											{
+												image: 'portfolio6',
+												category: 'Виниры',
+												title: 'Тотальное преображение улыбки: 28 виниров и коронок',
+												time: '2 недели',
+											},
+										]
+									for portfolioElem in portfolio
+										// Slide
+										.swiper-slide
+											+portfolio-card(portfolioElem.image, portfolioElem.category, portfolioElem.title, portfolioElem.time)
+							.slider-nav.slider-nav--dark
+								.slider-nav__pagination
+								.slider-nav__btn-box
+									button.slider-nav__btn.slider-nav__btn--prev
+									button.slider-nav__btn.slider-nav__btn--next
+						- n++

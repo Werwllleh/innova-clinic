@@ -1,0 +1,19 @@
+// Modal Portfolio filter
+#modal-portfolio-filter.modal
+	.modal__window.modal-filter
+		button.modal__close-btn.js-modal-close
+		h2.modal__title.modal-filter__title.h2-t Фильтры
+		form.modal-filter__form(action="#")
+			select.select
+				option(value='Все услуги', selected) Все услуги
+				option(value="Услуга 1") Услуга 1
+				option(value="Услуга 2") Услуга 2
+				option(value="Услуга 3") Услуга 3
+			select.select
+				option(value='Все врачи', selected) Все врачи
+				option(value="Врач 1") Врач 1
+				option(value="Врач 2") Врач 2
+				option(value="Врач 3") Врач 3
+			.modal-filter__button-box
+				button.modal-filter__submit.btn.btn-bg.l-btn.js-modal-close(type="submit") Применить фильтры
+				button.modal-filter__reset.button.button--light-blue(type="reset") Сбросить

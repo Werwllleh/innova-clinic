@@ -1,0 +1,92 @@
+.tabs {
+	&__tab-box {
+		position: relative;
+		margin-bottom: 40px;
+		padding-bottom: 10px;
+		overflow-y: auto;
+		max-width: 100%;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 10px;
+			height: 1px;
+			width: 100%;
+			background-color: rgba(#000, .1);
+		}
+
+
+		@include tablet {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__tab-box-wrap {
+		display: inline-flex;
+		gap: 30px;
+		//border-bottom: 1px solid rgba(#000, .1);
+
+
+
+		@include tablet {
+			gap: 20px;
+		}
+	}
+
+	&__button {
+		position: relative;
+		display: block;
+		margin-bottom: -1px;
+		padding: 0 0 8px;
+		background: none;
+		font-size: 17px;
+		line-height: 1.4;
+		white-space: nowrap;
+		transition: color $transition-default;
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 2px;
+			background-color: $color-global-blue;
+			content: "";
+			transform: scaleX(0);
+			transform-origin: left center;
+			transition: transform $transition-default;
+		}
+
+		&--active {
+			color: $color-global-blue;
+
+			&::after {
+				transform: none;
+			}
+		}
+	}
+
+	&__content-box {
+		position: relative;
+	}
+
+	&__content {
+		visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		opacity: 0;
+		transform: translateY(30px);
+		transition: opacity .4s linear, transform $transition-default;
+
+		&--active {
+			visibility: visible;
+			position: relative;
+			transform: none;
+			opacity: 1;
+		}
+	}
+}

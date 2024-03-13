@@ -1,0 +1,74 @@
+.section-doctor-about {
+	padding-top: 80px;
+	padding-bottom: 30px;
+
+	@include desktop {
+		padding-top: 24px;
+		padding-bottom: 18px;
+	}
+
+	&__title {
+		margin-bottom: 40px;
+
+		@include desktop {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__text-box {
+		max-width: 890px;
+		margin-bottom: 10px;
+	}
+
+	&__text-hidden {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height .5s;
+
+		.section-doctor-about__text-box--expanded & {
+			max-height: 99999px;
+		}
+	}
+
+	&__text-wrap {
+
+		p {
+
+			font-size: 17px;
+			line-height: 1.4;
+
+			&:not(:last-child) {
+				margin-bottom: 26px;
+			}
+
+			@include desktop {
+				margin-bottom: 20px;
+				font-size: 16px;
+			}
+		}
+
+	}
+
+	&__more-btn {
+		margin-top: 34px;
+		font-size: 17px;
+		color: $color-global-blue;
+		transition: color .2s;
+
+		&.hidden {
+			display: none;
+		}
+
+		&:hover {
+			color: $color-global-yellow;
+		}
+
+		@include desktop {
+			margin-top: 0;
+		}
+
+		.section-doctor-about__text-box--expanded & {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,53 @@
+.online-record {
+	padding-top: 50px;
+	padding-bottom: 80px;
+
+	@include desktop {
+		display: none;
+	}
+
+	&__content {
+		display: flex;
+		gap: 113px;
+		padding: 40px;
+		border-radius: 20px;
+		background-image: url("../images/get-consult/bg.png");
+		background-repeat: no-repeat;
+		background-position: -1% 64%;
+		background-size: 130% auto;
+		background-color: #242424;
+		color: $color-white;}
+
+	&__photo {
+		flex-shrink: 0;
+		display: block;
+		border-radius: 16px;
+	}
+
+	&__text-box {
+		max-width: 348px;
+	}
+
+	&__top-text {
+		margin-bottom: 22px;
+		font-size: 16px;
+		font-weight: 600;
+		color: $color-disabled-grey;
+	}
+
+	&__name {
+		margin-bottom: 14px;
+		font-size: 28px;
+		font-weight: 600;
+	}
+
+	&__job {
+		margin-bottom: 50px;
+		font-size: 17px;
+		line-height: 1.4;
+	}
+
+	&__button {
+		width: 100%;
+	}
+}

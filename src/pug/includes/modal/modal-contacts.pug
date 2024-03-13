@@ -1,0 +1,35 @@
+// Modal Contacts
+#modal-contacts.modal
+	.modal__window.modal-contacts.modal-contacts-body
+		.modal-contacts-top
+			button.modal__close-btn.js-modal-close
+			h2.modal-contacts__title.h2-t Связаться с нами
+			p.modal-contacts__text Заполните форму и мы свяжемся с вами
+				br
+				| в ближайшее время
+			form.modal-contacts__form
+				.form-group.modal-contacts__form-group
+					input.form-group__field(type="text" placeholder="Ваше имя*", name="name", required)
+					label.form-group__label Ваше имя*
+					.form-group__check
+				.form-group.modal-contacts__form-group
+					input.form-group__field(type="tel" placeholder="Ваш телефон*", name="phone", required)
+					label.form-group__label Ваш телефон*
+					.form-group__check
+				.form-group.modal-contacts__form-group
+					input.form-group__field(type="email" placeholder="Ваше e-mail", name="email")
+					label.form-group__label Ваше e-mail
+					.form-group__check
+				button.modal-contacts__btn.btn.btn-bg.l-btn(type="submit") Заказать звонок
+			p.modal-contacts__agreement.b-txt Нажимая кнопку «Заказать звонок», вы даете свое согласие на обработку
+				|
+				|
+				a.modal-contacts__agreement-link(href="#") персональных данных
+		.modal-contacts-footer
+			.mobile-menu__panel
+				.mobile-menu__panel-top
+					a.mobile-menu__phone-link(href="tel:+78352709791") +7 (8352) 70-97-91
+					.mobile-menu__social-group
+						a.mobile-menu__social.mobile-menu__social--whatsapp(href="#")
+						a.mobile-menu__social.mobile-menu__social--viber(href="#")
+						a.mobile-menu__social.mobile-menu__social--telegram(href="#")

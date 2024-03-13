@@ -1,0 +1,68 @@
+.review-sites {
+	margin: 30px 0 100px;
+
+	@include tablet-desktop() {
+		margin: 16px 0 120px;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px;
+
+		@include desktop-large() {
+			gap: 20px;
+		}
+		@include desktop() {
+			max-width: 600px;
+			margin: 0 auto;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include mobile() {
+
+		}
+	}
+	&__grid-item {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 30px;
+
+		@include desktop-large() {
+			align-items: center;
+			padding: 20px;
+		}
+		@include mobile() {
+			padding: 32px 15px;
+		}
+	}
+	&__grid-item-logo {
+		height: 23px;
+		margin: 0 0 18px 0;
+	}
+	&__grid-item-rating {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+	}
+	&__grid-item-rating-stars {
+		@include mobile() {
+			display: none;
+		}
+	}
+	&__grid-item-rating-value {
+
+		color: #3A3C40;
+		text-align: right;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: normal;
+
+		& span {
+			color: #A5A8AD;
+			font-weight: 400;
+			margin: 0 0 0 5px;
+		}
+	}
+}

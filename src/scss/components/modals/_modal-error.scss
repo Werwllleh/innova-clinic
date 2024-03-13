@@ -1,0 +1,46 @@
+.modal-error {
+	max-width: 450px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	text-align: center;
+
+	@include mobile {
+		padding: 64px 15px 44px;
+		min-height: unset;
+	}
+
+	&__img {
+		width: 60px;
+		height: 60px;
+		margin-bottom: 20px;
+
+		@include mobile {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+
+		@include mobile {
+			margin-bottom: 24px;
+			font-size: 18px;
+			font-weight: 600;
+		}
+	}
+
+	&__text {
+		font-size: 17px;
+		line-height: 1.4;
+		color: $color-text;
+
+		@include mobile {
+			font-size: 16px;
+		}
+	}
+}
+
+

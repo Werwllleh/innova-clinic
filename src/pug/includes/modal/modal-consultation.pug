@@ -1,0 +1,22 @@
+// Modal Consultation
+#modal-consultation.modal
+	.modal__window.modal-contacts
+		button.modal__close-btn.js-modal-close
+		h2.modal-contacts__title.h2-t Получить консультацию
+		p.modal-contacts__text Заполните форму и мы свяжемся с вами
+			br
+			| в ближайшее время
+		form.modal-contacts__form
+			.form-group.modal-contacts__form-group
+				input.form-group__field(type="text" placeholder="Ваше имя*", name="name", required)
+				label.form-group__label Ваше имя*
+				.form-group__check
+			.form-group.modal-contacts__form-group
+				input.form-group__field(type="tel" placeholder="Ваш телефон*", name="phone", required)
+				label.form-group__label Ваш телефон*
+				.form-group__check
+			button.modal-contacts__btn.btn.btn-bg.l-btn(type="submit") Записаться на прием
+		p.modal-contacts__agreement.b-txt Нажимая кнопку «Записаться на прием», вы даете свое согласие на обработку
+			|
+			|
+			a.modal-contacts__agreement-link(href="#") персональных данных

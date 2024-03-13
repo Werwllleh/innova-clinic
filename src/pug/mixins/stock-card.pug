@@ -1,0 +1,7 @@
+mixin stock-card(bg, text, period, isTextBlack)
+	figure.stock-card(class=(isTextBlack ? 'stock-card--text-black' : ''), data-modal="discount")&attributes(attributes)
+		img.stock-card__bg(src="images/stocks/" + bg, alt)
+		figcaption.stock-card__content
+			if period
+				span.stock-card__period= period
+			p.stock-card__text !{text}

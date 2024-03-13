@@ -1,0 +1,60 @@
+.simple-tabs {
+	&__tab-list-box {
+		text-align: center;
+	}
+
+	&__tab-list {
+		display: inline-flex;
+		margin: 0 auto 40px;
+		padding: 5px;
+		border: 1px solid #CFD3DA;
+		border-radius: 10px;
+
+		@include mobile() {
+			margin: 0 auto 24px;
+		}
+	}
+
+	&__button {
+		padding: 10px 16px;
+		border-radius: 10px;
+		font-size: 17px;
+		font-weight: 500;
+		color: $color-grey;
+		transition: background-color $transition-default, color $transition-default;
+
+		&--active {
+			background-color: $color-global-blue;
+			color: $color-white;
+		}
+
+		@include mobile() {
+			font-size: 14px;
+			padding: 8px 10px;
+			line-height: 1;
+		}
+	}
+
+	&__content-box {
+		position: relative;
+		transition: height $transition-default;
+	}
+
+	&__content {
+		visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		opacity: 0;
+		transform: translateY(30px);
+		transition: opacity .4s linear, transform $transition-default;
+
+		&--active {
+			visibility: visible;
+			position: relative;
+			transform: none;
+			opacity: 1;
+		}
+	}
+}

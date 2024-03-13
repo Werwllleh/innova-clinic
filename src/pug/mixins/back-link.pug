@@ -1,0 +1,5 @@
+mixin back-link(text, link)
+	a.back-link(href=link)&attributes(attributes)
+		svg.back-link__icon(xmlns='http://www.w3.org/2000/svg', width='13', height='13', viewBox='0 0 13 13', fill='none')
+			path(d='M8.66406 1.7334L4.33073 6.50007L8.66406 11.2667', stroke='currentColor', stroke-width='1.5')
+		| #{text}

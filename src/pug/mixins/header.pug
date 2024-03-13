@@ -1,0 +1,144 @@
+mixin header()
+	header.header
+		.header__body
+			a.header__logo(href='./index.html')
+				img.header__logo-default(src='./images/logo/logo.svg', alt='logo')
+				img.header__logo-scroll(src='./images/logo/logo_scroll.svg', alt='logo')
+				img.header__logo-mobile(src='./images/logo/logo-mobile.svg', alt='logo')
+			nav.header__nav
+				.nav__search
+					input.nav__search-input(placeholder="Что будем искать?")
+					.nav__search-notfound
+						.answer__body
+							.answer__notfound
+								.answer__notfound-title
+									h4.h4-t Результаты поиска
+								.answer__notfound-text По вашему запросу "
+									span.answer__notfound-text-value
+									| " ничего не найдено.
+					.nav__search-answer
+						.answer__body
+							.answer__category
+								.answer__category-title
+									h4.h4-t Услуги
+								.answer__category-items.services-items
+									a.services-item(href='./consultation.html')
+										p Консультация и диагностика
+										img(src='./images/search/tooth.png', alt='')
+									a.services-item(href='./implantation.html')
+										p Имплантация
+										img(src='./images/search/tooth.png', alt='')
+									a.services-item(href='./veneers.html')
+										p Виниры
+										img(src='./images/search/tooth.png', alt='')
+								a.answer__category-showall.line-link-dark(href='./services.html') Смотреть все
+							.answer__category
+								.answer__category-title
+									h4.h4-t Врачи
+								.answer__category-items.doctors-items
+									a.doctor-item(href='./doctor.html')
+										img(src='./images/search/doctors/1.jpg', alt='')
+										.doctor-item-about.b-txt
+											p Никитин Никита Юрьевич
+											span Стоматолог, стоматолог ортопед
+									a.doctor-item(href='./doctor.html')
+										img(src='./images/search/doctors/2.jpg', alt='')
+										.doctor-item-about.b-txt
+											p Андреев Димитрий Петрович
+											span Стоматолог, стоматолог ортопед
+									a.doctor-item(href='./doctor.html')
+										img(src='./images/search/doctors/3.jpg', alt='')
+										.doctor-item-about.b-txt
+											p Гордеева Людмила Валерьевна
+											span Стоматолог ортопед
+									a.doctor-item(href='./doctor.html')
+										img(src='./images/search/doctors/4.jpg', alt='')
+										.doctor-item-about.b-txt
+											p Гордеева Людмила Валерьевна
+											span Стоматолог ортопед
+								a.answer__category-showall.line-link-dark(href='./doctors.html') Смотреть все
+							.answer__category
+								.answer__category-title
+									h4.h4-t Работы
+								.answer__category-items.portfolio-items
+									a.portfolio-item(href='./portfolio.html')
+										.portfolio-item-about.b-txt
+											p Восстановили зуб после травмы
+											span Лечение травмы зубов
+									a.portfolio-item(href='./portfolio.html')
+										.portfolio-item-about.b-txt
+											p Тотальная реставрация улыбки
+											span Лечение зубов
+									a.portfolio-item(href='./portfolio.html')
+										.portfolio-item-about.b-txt
+											p Помогли пациентке побороть страх перед стоматологами и подарили улыбку мечты
+											span Антистресс-лечение
+									a.portfolio-item(href='./portfolio.html')
+										.portfolio-item-about.b-txt
+											p Сложная пластика десны, протезирование на имплантатах
+											span Пародонтология
+									a.portfolio-item(href='./portfolio.html')
+										.portfolio-item-about.b-txt
+											p Пластика рецессии десны
+											span Пародонтология
+								a.answer__category-showall.line-link-dark(href='./portfolio.html') Смотреть все
+					span.search-input-clear
+				.nav__menu
+					ul.header__nav-links
+						li.header__nav-link
+							a.nav__link.nav__link--rp(href='./services.html') Услуги
+								span.menu-arrow
+							ul.header__submenu.header__submenu--two-cols
+								li.submenu__link
+									a(href='./consultation.html') Консультация и диагностика
+								li.submenu__link
+									a(href='#') Лечение зубов
+								li.submenu__link
+									a(href='./implantation.html') Имплантация
+								li.submenu__link
+									a(href='#') Профессиональная гигиена
+								li.submenu__link
+									a(href='./veneers.html') Виниры
+								li.submenu__link
+									a(href='#') Профессиональное отбеливание
+								li.submenu__link
+									a(href='#') Коронки
+								li.submenu__link
+									a(href='#') Профосмотр
+								li.submenu__link
+									a(href='#') Установка брекетов
+								li.submenu__link
+									a(href='#') Детская стоматология
+								li.submenu__link
+									a(href='#') Установка элайнеров
+						li.header__nav-link
+							a.nav__link(href="./doctors.html") Врачи
+						li.header__nav-link
+							a.nav__link(href="./stocks.html") Акции
+						li.header__nav-link
+							a.nav__link(href="./prices.html") Цены
+						li.header__nav-link
+							a.nav__link.nav__link--rp Пациентам
+								span.menu-arrow
+							ul.header__submenu
+								li.submenu__link
+									a(href='./portfolio.html') Примеры работ
+								li.submenu__link
+									a(href='./reviews.html') Отзывы
+								li.submenu__link
+									a(href='./tax-deduction.html') Налоговый вычет
+						li.header__nav-link
+							a.nav__link(href="./contacts.html") Адреса клиник
+					button.header__nav-search.js-search-btn(type='button')
+			.header__right
+				.header__right-phone
+					a.header__phone(href='tel:+78352709791') +7 (8352) 70-97-91
+					span.header__phone-span.js-open-modal(data-modal="contacts") Связаться с нами
+				a.online-write-btn.btn.btn-bg.xs-btn(href="https://prodoctorov.ru/cheboksary/set/4011-stomatologiya-innova-klinik/", target="_blank") Онлайн запись
+			.header__buttons-row
+				button.header__mobile-button.header__mobile-button--phone(data-modal="contacts")
+					img.header__mobile-button-icon(src="images/icons/phone.svg", alt)
+				button.header__mobile-button.header__mobile-button--menu
+					img.header__mobile-button-icon.header__mobile-button-icon--menu(src="images/icons/menu.svg", alt)
+					img.header__mobile-button-icon.header__mobile-button-icon--close(src="images/icons/menu-close.svg", alt)
+	+mobile-menu()

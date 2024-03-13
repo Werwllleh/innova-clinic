@@ -1,0 +1,89 @@
+.modal-discount {
+	max-width: 720px;
+	padding: 40px 50px 60px;
+	background-color: $color-white !important;
+
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+		max-width: 500px;
+	}
+
+	@include mobile {
+		max-width: 100%;
+		padding: 16px 16px 40px;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+
+		@include desktop {
+			margin-bottom: 16px;
+			font-size: 20px;
+			font-weight: 600;
+		}
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		margin-bottom: 30px;
+		border-radius: 20px;
+
+		@include mobile {
+			order: -1;
+			border-radius: 0;
+			max-width: unset;
+			width: calc(100% + 32px);
+			margin-left: -16px;
+			margin-top: -16px;
+		}
+	}
+
+	&__content {
+		margin-bottom: 40px;
+	}
+
+	&__text-box {
+		margin-bottom: 24px;
+
+		@include mobile {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__text-bold {
+		margin-bottom: 10px;
+		font-size: 18px;
+		line-height: 23px;
+		font-weight: 600;
+
+		@include mobile {
+			margin-bottom: 5px;
+			font-size: 16px;
+		}
+	}
+
+	&__price {
+		color: $color-global-blue;
+	}
+
+	&__price-old {
+		font-size: 14px;
+		text-decoration: line-through;
+		color: $color-disabled-grey;
+	}
+
+	&__text {
+		font-size: 16px;
+		line-height: 1.4;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__btn {
+		width: 100%;
+	}
+}
