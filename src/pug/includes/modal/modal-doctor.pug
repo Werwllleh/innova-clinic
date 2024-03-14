@@ -50,7 +50,7 @@
 					.section-certificate-slider__header
 						h2.section-certificate-slider__title.h2-t Сертификаты
 							sup.title-sup 15
-						.slider-nav.slider-nav--dark.section-certificate-slider__nav
+						.slider-nav.slider-nav--dark.section-certificate-slider__nav-modal
 							.slider-nav__btn-box
 								button.slider-nav__btn.slider-nav__btn--prev
 								button.slider-nav__btn.slider-nav__btn--next
@@ -59,7 +59,7 @@
 							- n = 1
 							while n < 7
 								// Slide
-								.swiper-slide.section-certificate-slider__elem(data-src="images/section-certificate-slider/cert" + n + "-full.jpg")
+								.swiper-slide.section-certificate-slider__elemModal(data-src="images/section-certificate-slider/cert" + n + "-full.jpg")
 									img.section-certificate-slider__img(src="images/section-certificate-slider/cert" + n + ".jpg", alt)
 								- n++
 		.modal-doctor__footer

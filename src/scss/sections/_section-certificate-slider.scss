@@ -25,7 +25,8 @@
 		overflow: unset;
 	}
 
-	&__elem {
+	&__elem,
+	&__elemModal,{
 		position: relative;
 		z-index: 0;
 		display: inline-block;
